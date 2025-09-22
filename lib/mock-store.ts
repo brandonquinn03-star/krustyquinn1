@@ -1,5 +1,4 @@
 // Simple in-memory store for demo purposes only
-// Swap with Supabase using schema.sql
 let total = 60
 let sold = 0
 let open = true

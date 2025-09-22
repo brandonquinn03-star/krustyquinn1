@@ -10,7 +10,6 @@ const pies = [
 ]
 
 export function getNextDropTime(){
-  // Noon local today
   const d = new Date()
   d.setHours(12,0,0,0)
   return d.toLocaleTimeString([],{hour:'numeric', minute:'2-digit'})
@@ -30,11 +29,10 @@ export async function getMenu(){
   }
 }
 
-// Simulate slots 5:00 PM to 8:00 PM every 15 min
 export async function getSlots(){
   const slots:string[] = []
   const d = new Date(); d.setHours(17,0,0,0)
-  for(let i=0;i<12;i++){ // 17:00 to 20:45
+  for(let i=0;i<12;i++){
     slots.push(d.toLocaleTimeString([],{hour:'numeric', minute:'2-digit'}))
     d.setMinutes(d.getMinutes()+15)
   }
@@ -54,4 +52,3 @@ export async function admin(action:string, amount?:number){
   if(action==='reset') { total=60; sold=0; open=true }
   return { total, sold, left: total - sold, open }
 }
-// mock

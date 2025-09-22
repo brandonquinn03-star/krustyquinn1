@@ -1,0 +1,18 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root{
+  color-scheme: dark;
+}
+
+body{
+  @apply bg-black text-white;
+}
+
+.card {
+  @apply bg-zinc-900 rounded-xl border border-zinc-800;
+}
+.btn {
+  @apply rounded-xl px-4 py-3 font-medium border border-white/10 hover:bg-white hover:text-black transition;
+}
